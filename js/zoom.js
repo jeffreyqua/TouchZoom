@@ -1,9 +1,7 @@
 
 // jQuery
-$(document).ready(function(){ 
-	// ------------------- //
-	// -- INTERIOR PAGE -- //
-	// ------------------- //
+$(document).ready(function(){
+	// Initialize Zoom Variables
 	var zoomSize = 200;				// Zoom Radius (Offset calculation. Standard size is at 100px circle)
 	var touchOffset = 70;			// Manual Offset so that zoom window isn't on thumb
 	var pageYOffset = zoomSize/2;
@@ -36,24 +34,16 @@ $(document).ready(function(){
 	$('#base-image').bind('mousemove',function(e){
 		e.preventDefault();
 		var elementOffset = $(this).offset();	// Calculate image offset from document - handles window resizes
-		//$("#interior-zoom").css("display","block");
-		//var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
-		//CODE GOES HERE
-		//console.log(event.pageY+' '+event.pageX);
 		$('#zoom').css('top',event.pageY-pageYOffset-touchOffset);
 		$('#zoom').css('left',event.pageX-pageXOffset);
 		$('#zoom').css('background-position',(-(event.pageX - elementOffset.left - pageXOffset))+'px '+(-(event.pageY-elementOffset.top - pageYOffset))+'px');
 
-		//console.log('background position: '+$('#interior-zoom').css('background-position'));
 	});
 	
 	$('#base-image').bind('touchmove',function(e){
 		e.preventDefault();
 		var elementOffset = $(this).offset();	// Calculate image offset from document - handles window resizes
-		//$("#interior-zoom").css("display","block");
 		var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
-		//CODE GOES HERE
-		//console.log(touch.pageY+' '+touch.pageX);
 		$('#zoom').css('top',touch.pageY-pageYOffsetMobile-touchOffset);
 		$('#zoom').css('left',touch.pageX-pageXOffsetMobile);
 
@@ -62,12 +52,10 @@ $(document).ready(function(){
 
 	// ZOOM UP
 	$('#zoom-container').bind('mouseup',function(e){
-		//touchend
 		$("#zoom").css("display","none");
 	});
 
 	$('#zoom-container').bind('touchend',function(e){
-		//touchend
 		$("#zoom").css("display","none");
 	});
 });
