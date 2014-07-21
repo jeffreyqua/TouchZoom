@@ -10,13 +10,26 @@
 	background: url('../images/WinterSoldierWallpaper.jpg');
 	display: none;
 	position: fixed;
-	height: 200px;
-	width: 200px;
-	background-size: 960px 540px;
+	height: 100px;
+	width: 100px;
 	background-repeat: no-repeat;
 	/* Not sure how to deal with bottom edge, but no-repeat prevents weird repeating */
 	background-position-y: 0%;
 	background-position-x: 0%;
 	z-index: 2;
-	border-radius: 200px;
+
+-webkit-transform:scale(2,2);
+   -moz-transform:scale(2,2);
+    -ms-transform:scale(2,2);
+     -o-transform:scale(2,2);
+        transform:scale(2,2);
+
+	-webkit-background-size:960px 540px;
+	-moz-background-size:960px 540px;
+	-o-background-size:960px 540px;
+	background-size:960px 540px;
+
+	-webkit-border-radius:100px;
+	-moz-border-radius:100px;
+	border-radius:100px;
 }

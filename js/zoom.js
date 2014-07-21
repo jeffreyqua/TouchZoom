@@ -2,7 +2,7 @@
 // jQuery
 $(document).ready(function(){
 	// Initialize Zoom Variables
-	var zoomSize = 200;				// Zoom Radius (Offset calculation. Standard size is at 100px circle)
+	var zoomSize = 100;				// Zoom Radius (Offset calculation. Standard size is at 100px circle)
 	var touchOffset = 70;			// Manual Offset so that zoom window isn't on thumb
 	var pageYOffset = zoomSize/2;
 	var pageXOffset = zoomSize/2;
